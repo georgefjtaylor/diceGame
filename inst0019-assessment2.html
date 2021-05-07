@@ -1,0 +1,178 @@
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+      <title>DICE GAME</title>
+      <script src="inst0019-assessment2.js"></script>
+      <style>
+         input{
+         width: 150px;
+         border: 2px solid #555555;
+         }
+         select{
+         -o-appearance: none;
+         -ms-appearance: none;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         background-color: white;
+         color: black;
+         padding: 8px 16px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 12px;
+         margin: 4px 2px;
+         transition-duration: 0.4s;
+         cursor: pointer;
+         border: 2px solid #555555;
+         }
+         .sidenav select:hover {
+         background-color: #555555;
+         color: white;
+         }
+         .button {
+         background-color: #4CAF50;
+         border: none;
+         color: white;
+         padding: 8px 16px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 12px;
+         margin: 4px 2px;
+         transition-duration: 0.4s;
+         cursor: pointer;
+         }
+         .button5 {
+         background-color: white;
+         color: black;
+         border: 2px solid #555555;
+         }
+         .button5:hover {
+         background-color: #555555;
+         color: white;
+         }
+         table.center {
+         margin-left: auto;
+         margin-right: auto;
+         }
+         .center {
+         text-align: center;
+         border: 3px black;
+         }
+         .left {
+         text-align: left;
+         border: 3px black;
+         }
+         .sidenav {
+         height: 100%;
+         width: 160px; /* Set the width of the sidebar */
+         position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+         z-index: 1; /* Stay on top */
+         top: 0; /* Stay at the top */
+         left: 0;
+         background-color: #E96245; /* RED */
+         padding-top: 20px;
+         }
+         .sidenav2 {
+         height: 100%;
+         width: 160px; /* Set the width of the sidebar */
+         position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+         z-index: 0; /* Stay on top */
+         top: 0; /* Stay at the top */
+         right: 0;
+         background-color: #E96245; /* RED */
+         padding-top: 20px;
+         }
+         .sidenav a:hover {
+         color: #f1f1f1;
+         }
+         .sidenav b:hover {
+         color: #f1f1f1;
+         }
+         .center h1:hover {
+         color: #A62700;
+         }
+         .center h3:hover {
+         color: #f1f1f1;
+         }
+         .center p:hover {
+         color: #A62700;
+         }
+         .sidenav2 p:hover {
+         color: #f1f1f1;
+         }
+         .sidenav2 table:hover {
+         color: #f1f1f1;
+         }
+         /* Style page content */
+         .main {
+         margin-left: 500px; /* Same as the width of the sidebar */
+         padding: 0px 100px;
+         }
+         body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+         body {font-size:16px;}
+      </style>
+   </head>
+   <body>
+      <nav class="sidenav" style="z-index:3;width:300px;font-weight:bold;" id="sidebar">
+         <br>
+         <div class="center">
+            <h3 class="center"><b>DICE<br>GAME</b></h3>
+         </div>
+         <div class="center">
+            <a>Number of sides [1-20]:</a>
+            <label for="number_sides"></label><br>
+            <input type="text" id="number_sides" name="number_sides" value=""><br><br>
+            <a>Number of dice [1-20]:</a>
+            <label for="number_dice"></label><br>
+            <input type="text" id="number_dice" name="number_dice" value=""><br><br>
+            <a>Randomise the number of dice and sides? (This will override your input)
+            <a/>
+               <select id="yesOrNo">
+                  <option value="no" id="noOption">no</option>
+                  <option value="yes" id="yesOption">yes</option>
+               </select>
+               <br><br>
+            <a>Choose a way to win (optional):
+            <a/>
+               <select id="win">
+                  <option value="no win method (default)" id="all_matching">no win method (default)</option>
+                  <option value="all dice even" id="all_even">all dice even</option>
+                  <option value="half or more dice matching" id="half_matching">half or more dice matching</option>
+               </select>
+               <br><br>
+               <button class="button button5" id="rollAll" onclick="roll_dice()">Roll Dice</button>
+               <br><br>
+               <button class="button button5" id="reset_variables" onclick="reset_variables()">Reset Game</button>
+               <br><br><br>
+            <a>Click Roll Dice to begin!</a>
+            <br><br>
+         </div>
+      </nav>
+      <nav class="sidenav2" style="z-index:3;width:300px;font-weight:bold;" id="sidebar">
+         <br>
+         <div class="center">
+         <h3 id="all_rolls"></h3>
+         <h1 id='all_rolls_id'></h1>
+         <p id="number_of_rolls">
+         <p id="total_matching">
+         <p id="total_across_rolls">
+         <p id="totals_graph">
+         <div id=tally></div>
+      </nav>
+      <div class="center">
+         <br>
+         <h1 id='this_roll_id'></h1>
+         <p id="showResults">
+         <p id="total">
+         <p id="matches">
+         <p id="win_output">
+      </div>
+      <br>
+   </body>
+</html>
+
